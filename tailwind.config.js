@@ -16,7 +16,8 @@ export default {
         txt:{
           900: '#0f172a',
           800: '#1e293b',
-          600: '#475569'
+          600: '#475569',
+          light: '#d1d5db',
         },
         accent:{
           emerald: '#022c22',

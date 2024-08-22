@@ -1,10 +1,13 @@
+/* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+/* Tailwind Import */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Global style */
 body{
     padding: 0;
     margin: 0;
@@ -13,36 +16,53 @@ body{
 :root{
     @apply font-body;
 }
+
 .custom-box-shadow{
     box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.75);
 }
+
+/* Link Active style */
 .active{
-    @apply border border-txt-600 opacity-100;
+    @apply opacity-100;
 }
 
 /* Auth Style */
-
 .auth-form label
 {
     @apply capitalize font-bold;
 }
-
 .auth-form input,
 .auth-form button
 {
     @apply w-full p-3 rounded-btn shadow-2xl;   
 }
-
 .auth-form input
 {
     @apply my-4 bg-primary;
 }
-
 .auth-form button
 {
     @apply my-6 bg-main capitalize font-bold;
 }
-
 .auth-form button:disabled{
     opacity: .5;
+}
+
+
+/* App Layout */
+.nav-bar
+{
+    @apply w-full h-[calc(10vh)] fixed bottom-0 z-10 flex justify-between items-center bg-accent-emerald border-t border-txt-600 px-4;
+}
+.nav-bar > a
+{
+    @apply flex flex-col items-center justify-center opacity-60;
+}
+.nav-bar > a > span
+{
+    @apply text-xs capitalize pt-1;
+}
+.nav-bar > a.active
+{
+    @apply opacity-100;
 }

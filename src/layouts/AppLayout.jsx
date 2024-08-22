@@ -1,11 +1,15 @@
 // React Router Dom Import
 import { Outlet } from 'react-router-dom'
+import NavBar from '../components/__protectedRoute/NavBar'
 
 // Default Function
 export default function AppLayout() {
   return (
-    <div className='w-screen h-screen overflow-y-hidden'>
-      <Outlet />
-    </div>
+    <main className='w-screen h-screen relative overflow-y-scroll overflow-x-hidden no-scrollbar bg-accent-emerald text-white'>
+      <section className='relative w-full h-[calc(90vh)] overflow-y-scroll overflow-x-hidden no-scrollbar'>
+        <Outlet />
+      </section>
+      <NavBar />
+    </main>
   )
 }

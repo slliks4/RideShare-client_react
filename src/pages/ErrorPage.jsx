@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function ErrorPage() {
+export default function ErrorPage({ message="" }) {
   return (
-    <div>ErrorPage</div>
+    <div>ErrorPage: {message}</div>
   )
 }

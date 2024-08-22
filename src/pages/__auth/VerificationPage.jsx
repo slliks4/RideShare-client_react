@@ -2,7 +2,7 @@
 import { Link, useParams } from 'react-router-dom';
 
 // Components Import
-import VerificationOTPForm from '../../components/__auth/VerificationOTPForm';
+import ResendLink from '../../components/__auth/ResendLink';
 
 // Default Function
 export default function VerificationPage() {
@@ -11,11 +11,11 @@ export default function VerificationPage() {
     return (
         <div>
             <div className='mb-4'>
-                <h1 className='capitalize font-bold'>OTP verification</h1>
-                <p className='py-2'>We have sent you a one-time password to this email: {email}</p>
+                <h1 className='capitalize font-bold'>verification</h1>
+                <p className='py-2'>We have sent a link to this email: {email}. Follow the link to reset your password.</p>
             </div>
-            <VerificationOTPForm />
-            <h3 className="capitalize text-center"> Did not receive OTP ? <Link to={''} className="underline"> resend OTP </Link></h3>
+            <h3 className="capitalize">Resend link in: 5:49</h3>
+            <ResendLink />
         </div>
     )
 }

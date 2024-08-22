@@ -10,7 +10,7 @@ export default function ResetPasswordPage() {
     <div>
       <div className='mb-4'>
         <h1 className='capitalize font-bold'>Reset Passowrd</h1>
-        <p className='py-2'>We will send you a one-time password. Please kindly enter your registered email below</p>
+        <p className='py-2'>We will send you a link. Please kindly enter your registered email below</p>
       </div>
       <ResetPasswordForm />
       <h3 className="capitalize text-center">Having issues ? <Link to={'/auth/retrieve-email'} className="underline"> Retrieve email</Link></h3>

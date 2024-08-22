@@ -22,7 +22,7 @@ import RetrieveEmailPage from "./pages/__auth/RetrieveEmailPage";
 import VerificationPage from "./pages/__auth/VerificationPage";
 
 // Testing variable
-const isAuthenticated = false;
+const isAuthenticated = true;
 
 // Default Funtion
 function App() {

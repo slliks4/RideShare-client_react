@@ -1,4 +1,8 @@
-# church-ride-share_react
+# npm install
+
+## npm run dev
+
+### church-ride-share_react
 This is a react application that simplifies the transportation unit in churches
 
 Dependecies and library: https://1drv.ms/w/s!As5Rd04XbWhWkqhq6tY0fK-NueQt7A?e=dNrOht
