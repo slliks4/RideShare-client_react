@@ -6,6 +6,8 @@ export default function HomeRider() {
   // Session Search value
   const [searchTerm, setSearchTerm] = useState('');
 
+  console.log('home rider')
+
   return (
     <>
       <SearchSession searchTerm={searchTerm} setSearchTerm={setSearchTerm} />

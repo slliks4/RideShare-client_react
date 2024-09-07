@@ -13,8 +13,15 @@ import {
 // Io5 Import
 import { 
     IoLocationSharp as LocationIcon,
-    IoTimer as RepeatIcon
+    IoTimer as RepeatIcon,
+    IoClose as CloseIcon,
+    IoArrowBackOutline as BackIcon,
     
 } from "react-icons/io5";
 
-export { SearchIcon, HomeIcon, ActivityIcon, AccountIcon, LocationIcon, RepeatIcon }
+
+import { 
+    CiCircleMore as MenuIcon
+} from "react-icons/ci";
+
+export { SearchIcon, HomeIcon, ActivityIcon, AccountIcon, LocationIcon, RepeatIcon, CloseIcon, BackIcon, MenuIcon }

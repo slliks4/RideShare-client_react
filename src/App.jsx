@@ -13,13 +13,16 @@ import AuthLayout from './layouts/AuthLayout';
 
 // Pages Import
 import ErrorPage from './pages/ErrorPage';
-import HomePage from './pages/__protectedRoute/HomePage';
+import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 import LoginPage from "./pages/__auth/LoginPage";
 import RegisterPage from "./pages/__auth/RegisterPage";
 import ResetPasswordPage from "./pages/__auth/ResetPasswordPage";
 import RetrieveEmailPage from "./pages/__auth/RetrieveEmailPage";
 import VerificationPage from "./pages/__auth/VerificationPage";
+import BookingStep1 from "./pages/BookingStep1";
+import BookingStep2 from "./pages/BookingStep2";
+import RideDetailsPage from './pages/RideDetailsPage';
 
 // Testing variable
 const isAuthenticated = true;
@@ -44,15 +47,21 @@ function App() {
           ]
         },
         {
-          path:'',
-          element: <AppLayout />,
           errorElement: <ErrorPage error={'App Error'} />,
           children:[
             {
               element: <ProtectedRoute isAuthenticated={isAuthenticated} redirectPath="/auth/login" />,
               errorElement: <ErrorPage error={'Protected Route error'} />,
               children:[
-                { index:true, element: <HomePage /> }
+                { 
+                  element: <AppLayout />,
+                  children:[
+                    { index:true, element: <HomePage /> },
+                    { path:'ride-details/:ride-token', element: <RideDetailsPage /> }
+                  ]
+                },
+                { path:'book-ride/:ride-token', element: <BookingStep1 /> },
+                { path:'booking-step2/:ride-token', element: <BookingStep2 /> }
               ]
             },
           ]
@@ -67,7 +76,7 @@ function App() {
       <RouterProvider router={routes} />
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

@@ -1,5 +1,5 @@
 import React from 'react'
-import { AccountIcon, ActivityIcon, HomeIcon } from '../../imports/icons'
+import { AccountIcon, ActivityIcon, HomeIcon } from '../imports/icons'
 import { NavLink } from 'react-router-dom'
 
 export default function NavBar() {

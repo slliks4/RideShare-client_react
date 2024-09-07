@@ -1,7 +1,8 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { LocationIcon, RepeatIcon } from "../../imports/icons";
-import { PropTypes } from "../../imports/library";
+import { LocationIcon, RepeatIcon } from "../imports/icons";
+import { PropTypes } from "../imports/library";
 import { useState } from "react";
+import ModalCenter from "./ModalCenter";
 
 // Default Function
 export default function BuildSessionList({ searchTerm }) {
@@ -19,8 +20,9 @@ export default function BuildSessionList({ searchTerm }) {
 
         // Navigate to booking form if session is available
         console.log('navigate to booking page');
-        navigate(`/book-ride`, { state: { fromBuildSession: true } });
+        navigate(`/book-ride/TTKKA-90934AA`, { state: { fromBuildSession: true } });
     };
+    console.log('build session')
     
     return (
         <ul className="my-4">
@@ -104,14 +106,17 @@ export default function BuildSessionList({ searchTerm }) {
                     <p className="font-bold">08/09/2024</p>
                 </small>
             </li>
-            { showModal && (
-                <div className='fixed top-0 left-0 w-screen h-screen flex justify-center items-center z-50 bg-black/55'>
-                    <div className="w-[calc(80vw)] h-[calc(30vh)] flex flex-col items-center justify-center bg-accent-emerald shadow-lg rounded-box">
-                        <p>modal content lol :)</p>
-                        <button onClick={() => setShowModal(false)}>Close</button>
-                    </div>
-                </div>
-                )
+            { showModal && 
+                <ModalCenter 
+                    setShowModal={setShowModal}
+                    Children={
+                        <>
+                            <h3 className="capitalize text-error font-extrabold">Oops !!</h3>
+                            <p className="py-2">Thursday Service is unavailable, try again in:</p>
+                            <div className="text-accent-teal font-extrabold">12 : 23: 08 Hours</div>
+                        </>
+                    }
+                /> 
             }
         </ul>
     )

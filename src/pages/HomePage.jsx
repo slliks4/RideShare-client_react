@@ -1,9 +1,9 @@
 // Page Import
-import ErrorPage from "../ErrorPage";
+import ErrorPage from "./ErrorPage";
 
 // Components Import
-import HomeDriver from '../../components/__protectedRoute/__driver/HomeDriver';
-import HomeRider from "../../components/__protectedRoute/__rider/HomeRider";
+import HomeRider from "../components/__rider/HomeRider";
+import HomeDriver from '../components/__driver/HomeDriver';
 
 const isDriver = false;
 
@@ -12,7 +12,7 @@ export default function HomePage() {
 
   if (isDriver === undefined || isDriver === null){
     return <ErrorPage message="Driver state not given" />
-  }
+  };
 
   return (
     <>    

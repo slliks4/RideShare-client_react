@@ -5,13 +5,13 @@ import { useState } from 'react';
 import { Form } from 'react-router-dom';
 
 // Icons Import
-import { SearchIcon } from '../../imports/icons';
+import { SearchIcon } from '../imports/icons';
 
 // Library Import
-import { PropTypes } from '../../imports/library';
+import { PropTypes } from '../imports/library';
 
 // Default Function
-export default function SearchSession({ searchTerm, setSearchTerm }) {
+export default function SearchSession({ searchTerm='', setSearchTerm }) {
     const [pending, setPending] = useState(false);
 
     const handleSearch = async (e) => {

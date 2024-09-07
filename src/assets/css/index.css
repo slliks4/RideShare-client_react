@@ -66,3 +66,27 @@ body{
 {
     @apply opacity-100;
 }
+
+/* Booking Form Style */
+.booking-form label
+{
+    @apply capitalize font-bold;
+}
+.booking-form input,
+.booking-form button,
+.booking-form select
+{
+    @apply w-full p-3 rounded-btn shadow-2xl;   
+}
+.booking-form input,
+.booking-form select
+{
+    @apply my-4 bg-primary;
+}
+.booking-form button
+{
+    @apply my-4 bg-main capitalize font-bold;
+}
+.booking-form button:disabled{
+    opacity: .5;
+}
