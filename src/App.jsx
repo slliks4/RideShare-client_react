@@ -23,6 +23,7 @@ import VerificationPage from "./pages/__auth/VerificationPage";
 import BookingStep1 from "./pages/BookingStep1";
 import BookingStep2 from "./pages/BookingStep2";
 import RideDetailsPage from './pages/RideDetailsPage';
+import ActivityPage from "./pages/ActivityPage";
 
 // Testing variable
 const isAuthenticated = true;
@@ -57,11 +58,12 @@ function App() {
                   element: <AppLayout />,
                   children:[
                     { index:true, element: <HomePage /> },
-                    { path:'ride-details/:ride-token', element: <RideDetailsPage /> }
+                    { path:'activity', element: <ActivityPage /> }
                   ]
                 },
                 { path:'book-ride/:ride-token', element: <BookingStep1 /> },
-                { path:'booking-step2/:ride-token', element: <BookingStep2 /> }
+                { path:'booking-step2/:ride-token', element: <BookingStep2 /> },
+                { path:'ride-details/:ride-token', element: <RideDetailsPage /> }
               ]
             },
           ]

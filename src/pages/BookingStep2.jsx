@@ -1,17 +1,24 @@
+// Hooks Import
+import useGoBack from "../hooks/useGoBack";
+
 // Page Import
 import ErrorPage from "./ErrorPage";
 
 // Components Import
 import BookingForm from "../components/BookingForm";
-import { BackIcon, MenuIcon, RepeatIcon } from "../imports/icons";
-import SearchAddress from '../components/__map/SearchAddress';
+
+// Icons Import
+import { BackIcon } from "../imports/icons";
+
+// Images Import
 import { map2 } from "../imports/images";
 
+// Dummy data
 const isDriver = false;
 
 // Default Function
 export default function BookingStep2() {
-
+    const { goBack } = useGoBack();
     if (isDriver === undefined || isDriver === null){
         return <ErrorPage message="Driver state not given" />
     };
@@ -20,7 +27,8 @@ export default function BookingStep2() {
         <main className='w-full h-screen overflow-y-scroll overflow-x-hidden no-scrollbar bg-white text-white'>
             <div name="" className="w-full h-[calc(65vh)] fixed z-10 border">
                 <div className="w-full h-full relative flex justify-center">
-                    <button className="absolute top-2 left-2 w-12 h-12 flex items-center justify-center rounded-full shadow text-xl bg-accent-emerald">
+                    <button className="absolute top-2 left-2 w-12 h-12 flex items-center justify-center rounded-full shadow text-xl bg-accent-emerald"
+                    onClick={goBack}>
                         <BackIcon />
                     </button>
                     <img src={map2} alt="map" className="w-full h-full object-cover object-center" />

@@ -1,18 +1,28 @@
+// React Router Dom Import
+import { useNavigate } from "react-router-dom";
+
+// Hooks Import
+import useGoBack from "../hooks/useGoBack";
+
 // Page Import
 import ErrorPage from "./ErrorPage";
 
 // Components Import
-import BookingForm from "../components/BookingForm";
-import { BackIcon, MenuIcon, RepeatIcon } from "../imports/icons";
 import SearchAddress from '../components/__map/SearchAddress';
-import { map } from "../imports/images";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
+// Images Import
+import { map } from "../imports/images";
+
+// Icons Import
+import { BackIcon, MenuIcon } from "../imports/icons";
+
+// Dummy data
 const isDriver = false;
 
 // Default Function
 export default function BookingStep1() {
+    const { goBack } = useGoBack();
+
     const navigate = useNavigate();
 
     if (isDriver === undefined || isDriver === null){
@@ -28,7 +38,7 @@ export default function BookingStep1() {
         <main className='w-full h-screen overflow-y-scroll overflow-x-hidden no-scrollbar bg-white text-white'>
             <div name="" className="w-full h-[calc(65vh)] fixed z-10 border">
                 <div className="w-full h-full relative flex justify-center">
-                    <button className="absolute top-2 left-2 w-12 h-12 flex items-center justify-center rounded-full shadow text-xl bg-accent-emerald">
+                    <button onClick={goBack} className="absolute top-2 left-2 w-12 h-12 flex items-center justify-center rounded-full shadow text-xl bg-accent-emerald">
                         <BackIcon />
                     </button>
                     <img src={map} alt="map" className="w-full h-full object-cover object-center" />
