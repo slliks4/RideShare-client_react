@@ -24,10 +24,10 @@ import BookingStep1 from "./pages/BookingStep1";
 import BookingStep2 from "./pages/BookingStep2";
 import RideDetailsPage from './pages/RideDetailsPage';
 import ActivityPage from "./pages/ActivityPage";
+import AccountPage from "./pages/AccountPage";
 
 // Testing variable
 const isAuthenticated = true;
-
 // Default Funtion
 function App() {
   const routes = createBrowserRouter([
@@ -58,7 +58,8 @@ function App() {
                   element: <AppLayout />,
                   children:[
                     { index:true, element: <HomePage /> },
-                    { path:'activity', element: <ActivityPage /> }
+                    { path:'activity', element: <ActivityPage /> },
+                    { path:'account', element: <AccountPage /> },
                   ]
                 },
                 { path:'book-ride/:ride-token', element: <BookingStep1 /> },

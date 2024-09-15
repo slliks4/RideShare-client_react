@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 // Default Function
 export default function RideDetailsPage() {
-  const [ rideState, setRideState ] = useState('pending');
+  const [ rideState, setRideState ] = useState('completed');
   const [ profilePic, setProfilePic ] = useState(null);
 
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ export default function RideDetailsPage() {
       <div className="w-full absolute top-[calc(10vh)] p-4">
         <div className="w-full h-[calc(20vh)] relative rounded-lg overflow-hidden">
           <img src={map2} alt="google-map" className='w-full h-full object-cover object-center' />
-          <h3 className='absolute bottom-0 p-2 capitalize font-bold text-txt-900 z-20'>google</h3>
+          <h3 className='absolute bottom-0 p-2 capitalize font-bold text-txt-900'>google</h3>
         </div>
         <div className='mt-6'>
           <div className='flex justify-between items-center'>
@@ -137,9 +137,6 @@ const TripInfo = ({ tripInfo=true }) => {
           <li className='my-4 list-disc'>
             <span className='font-bold capitalize'>number of occupancy:</span> 2
           </li>
-          <li className='my-4 list-disc'>
-            <span className='font-bold capitalize'>pick up time:</span> 9:00 AM
-          </li>
         </ul>
       ):(
         <ul className='px-4'>
@@ -172,6 +169,9 @@ const DriverInfo = ({ rideState }) => {
           </li>
           <li className='my-4 list-disc'>
             <span className='font-bold capitalize'>vehicle plate:</span> DDFADFDD3V
+          </li>
+          <li className='my-4 list-disc'>
+            <span className='font-bold capitalize'>pick up time:</span> 9:00 AM
           </li>
         </ul>
       ):(

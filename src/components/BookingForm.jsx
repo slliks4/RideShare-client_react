@@ -46,8 +46,8 @@ export default function BookingForm() {
             <input type="number" name="occupancy" id="occupancy" defaultValue={2} required />
 
             {/* PickUP time */}
-            <label htmlFor="pickup-time">Pick up time:</label>
-            <input type="time" name="pickup-time" id="pickup-time" />
+            {/* <label htmlFor="pickup-time">Pick up time:</label>
+            <input type="time" name="pickup-time" id="pickup-time" /> */}
 
             {/* Submit Button */}
             <button type="submit" disabled={ pending }> book ride </button>
