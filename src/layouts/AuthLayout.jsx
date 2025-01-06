@@ -1,6 +1,5 @@
 // React Router Dom Import
 import { NavLink, Outlet } from "react-router-dom";
-
 // Images Import
 import { logo } from "../imports/images";
 

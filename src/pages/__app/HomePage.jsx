@@ -1,9 +1,9 @@
 // Page Import
-import ErrorPage from "./ErrorPage";
+import ErrorPage from "../ErrorPage";
 
 // Components Import
-import HomeRider from "../components/__rider/HomeRider";
-import HomeDriver from '../components/__driver/HomeDriver';
+import HomeRider from "../../components/__app/__rider/HomeRider";
+import HomeDriver from '../../components/__app/__driver/HomeDriver';
 
 const isDriver = false;
 

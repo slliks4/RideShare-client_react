@@ -1,6 +1,6 @@
 // React Import
 
-import { AvatarIcon } from "../imports/icons";
+import { AvatarIcon } from "../../imports/icons";
 
 // Default Function
 export default function AccountPage() {

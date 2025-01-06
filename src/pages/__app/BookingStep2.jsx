@@ -1,17 +1,17 @@
 // Hooks Import
-import useGoBack from "../hooks/useGoBack";
+import useGoBack from "../../hooks/app/useGoBack";
 
 // Page Import
-import ErrorPage from "./ErrorPage";
+import ErrorPage from "../ErrorPage";
 
 // Components Import
-import BookingForm from "../components/BookingForm";
+import BookingForm from "../../components/__app/BookingForm";
 
 // Icons Import
-import { BackIcon } from "../imports/icons";
+import { BackIcon } from "../../imports/icons";
 
 // Images Import
-import { map2 } from "../imports/images";
+import { map2 } from "../../imports/images";
 
 // Dummy data
 const isDriver = false;

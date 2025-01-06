@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import SearchSession from '../SearchSession'
+// React Import
+import React, { useState } from 'react';
+// Components Import
+import SearchSession from '../../SearchSession';
 import BuildSessionList from '../BuildSessionList';
 
+// Home Rider Default Function
 export default function HomeRider() {
   // Session Search value
   const [searchTerm, setSearchTerm] = useState('');
-
-  console.log('home rider')
 
   return (
     <>

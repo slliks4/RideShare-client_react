@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FilterIcon, CarIcon } from "../imports/icons";
+import { FilterIcon, CarIcon } from "../../imports/icons";
 
 // Default Function
 export default function ActivityPage(){

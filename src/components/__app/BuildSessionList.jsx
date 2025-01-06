@@ -1,8 +1,8 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { LocationIcon, RepeatIcon } from "../imports/icons";
-import { PropTypes } from "../imports/library";
+import { LocationIcon, RepeatIcon } from "../../imports/icons";
+import { PropTypes } from "../../imports/library";
 import { useState } from "react";
-import ModalCenter from "./ModalCenter";
+import ModalCenter from "../ModalCenter";
 
 // Default Function
 export default function BuildSessionList({ searchTerm }) {

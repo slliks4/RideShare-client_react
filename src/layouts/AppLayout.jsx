@@ -1,6 +1,5 @@
 // React Router Dom Import
 import { Outlet } from 'react-router-dom';
-
 // Components Import
 import NavBar from '../components/NavBar';
 

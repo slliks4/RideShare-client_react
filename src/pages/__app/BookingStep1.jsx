@@ -2,19 +2,19 @@
 import { useNavigate } from "react-router-dom";
 
 // Hooks Import
-import useGoBack from "../hooks/useGoBack";
+import useGoBack from "../../hooks/app/useGoBack";
 
 // Page Import
-import ErrorPage from "./ErrorPage";
+import ErrorPage from "../ErrorPage";
 
 // Components Import
-import SearchAddress from '../components/__map/SearchAddress';
+import SearchAddress from '../../components/__map/SearchAddress';
 
 // Images Import
-import { map } from "../imports/images";
+import { map } from "../../imports/images";
 
 // Icons Import
-import { BackIcon, MenuIcon } from "../imports/icons";
+import { BackIcon, MenuIcon } from "../../imports/icons";
 
 // Dummy data
 const isDriver = false;

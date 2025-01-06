@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,  // Listen on all addresses, including LAN
-    port: 3000,  // Specify the port, e.g., 3000
+    port: 5500,  // Specify the port, e.g., 3000
   },
 })

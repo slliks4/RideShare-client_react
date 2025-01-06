@@ -2,12 +2,12 @@
 import { useState } from 'react';
 
 // Image Imports
-import { map2 } from '../imports/images';
+import { map2 } from '../../imports/images';
 
 // Icons Import
 import { 
   ArrowDownIcon, ArrowRightIcon, ArrowUpIcon, AvatarIcon, CloseIcon, FeedBackIcon, HelpIcon, LostItemsIcon, PendingIcon, ReportProblemIcon 
-} from '../imports/icons';
+} from '../../imports/icons';
 import { useNavigate } from 'react-router-dom';
 
 
