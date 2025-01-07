@@ -20,7 +20,7 @@ const AuthReducer = (state, action) => {
             return { pending:false, isAuthenticated:false, token:null, user:null};
     
         default:
-            state;
+            return state;
     }
 }
 
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
                     const userResponse = {
                         data:{
                             email: "admin@gmail.com",
-                            role: ['admin','driver','rider'],
+                            role: ['admin'],
                             providerTypeId: "",
                             id: 1
                         }

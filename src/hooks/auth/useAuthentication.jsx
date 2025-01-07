@@ -1,4 +1,5 @@
 // Providers Import
+import { replace, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../providers/AuthProvider';
 // Apis Import
 import useFetch from '../api/useFetch';
@@ -7,6 +8,7 @@ import useFetch from '../api/useFetch';
 export default function useAuthentication() {
     const { dispatch } = useAuthContext(); // Global Auth Context
     const { get, post } = useFetch(); // Fetch api 
+    const navigate = useNavigate();
 
     // Login Function
     const login = async ({ data }) => {
@@ -19,7 +21,7 @@ export default function useAuthentication() {
                 const userResponse = {
                     data:{
                         email: "admin@gmail.com",
-                        role: ['admin','driver','rider'],
+                        role: ['admin'],
                         providerTypeId: "",
                         id: 1
                     }
@@ -28,6 +30,9 @@ export default function useAuthentication() {
                 if(userResponse?.data){
                     dispatch({ type:'LOGIN', payload:{token:tokenResponse.data.token, user:{...userResponse.data}} }); // Login
                     localStorage.setItem('token', tokenResponse.data.token); // Store token in local storage
+
+                    // Reroute based on user role
+                    onLoginReroute(userResponse.data.role)
                 }
             }
         } catch (error) {
@@ -37,8 +42,18 @@ export default function useAuthentication() {
 
     // Logout Function
     const logout = async () => {
-        dispatch({ tpye: 'LOGOUT' });
-        localStorage.removeItem('token');
+        dispatch({ type: 'LOGOUT' }); // Logout
+        localStorage.removeItem('token'); // Remove token after state update
+    }
+
+    const onLoginReroute = (role) =>{
+        // Navigate to Pages based on user Role
+        if(role.includes('admin')){
+            navigate('/admin', { replace: true });
+        }
+        if (role.includes('driver') && !role.includes('admin')){
+            navigate('/driver', { replace: true });
+        }
     }
 
     return ({ logout, login });

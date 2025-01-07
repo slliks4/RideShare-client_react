@@ -32,7 +32,6 @@ export const RoleProtectedRoute = ({ roles, allowedRoles }) => {
     return hasAccess ? <Outlet /> : <div>Permission denied</div>;
 };
 
-
 // Routing system
 export const createRoutes = () => {
     // Global States 
