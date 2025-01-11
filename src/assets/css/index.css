@@ -52,7 +52,7 @@ body{
 /* App Layout */
 .nav-bar
 {
-    @apply w-full h-[calc(10vh)] fixed bottom-0 z-10 flex justify-between items-center bg-accent-emerald border-t border-txt-600 px-4;
+    @apply w-full h-[calc(10dvh)] fixed bottom-0 z-10 flex justify-between items-center bg-accent-emerald border-t border-txt-600 px-4;
 }
 .nav-bar > a
 {

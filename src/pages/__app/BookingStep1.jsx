@@ -35,7 +35,7 @@ export default function BookingStep1() {
     }
 
     return (
-        <main className='w-full h-screen overflow-y-scroll overflow-x-hidden no-scrollbar bg-white text-white'>
+        <main className='w-full h-[calc(100dvh)] overflow-y-scroll overflow-x-hidden no-scrollbar bg-white text-white'>
             <div name="" className="w-full h-[calc(65vh)] fixed z-10 border">
                 <div className="w-full h-full relative flex justify-center">
                     <button onClick={goBack} className="absolute top-2 left-2 w-12 h-12 flex items-center justify-center rounded-full shadow text-xl bg-accent-emerald">

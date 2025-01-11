@@ -1,5 +1,5 @@
 // Providers Import
-import { replace, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../providers/AuthProvider';
 // Apis Import
 import useFetch from '../api/useFetch';

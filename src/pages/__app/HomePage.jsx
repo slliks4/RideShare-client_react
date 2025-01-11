@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <>    
-      <header className="w-full h-[calc(10vh)] fixed z-10 flex items-center px-4 bg-accent-emerald border-b border-txt-600">
+      <header className="w-full h-[calc(10dvh)] fixed z-10 flex items-center px-4 bg-accent-emerald border-b border-txt-600">
         <h3 className="text-3xl text-accent-teal font-pacifico capitalize">welcome admin</h3>
         <button onClick={async()=> await logout()}>logout</button>
       </header>
