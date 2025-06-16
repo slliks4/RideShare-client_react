@@ -13,7 +13,8 @@ export default function useAuthentication() {
     // Login Function
     const login = async ({ data }) => {
         try {
-            const tokenResponse = await post({data, endpoints:'auth/login'});
+            // const tokenResponse = await post({data, endpoints:'auth/login'});
+            const tokenResponse = {data:{}};
             if (tokenResponse?.data){
                 // const userResponse =  await get({endpoints:'userProfile/getbyid', token:tokenResponse.data.token}); // Get User
 
@@ -21,7 +22,7 @@ export default function useAuthentication() {
                 const userResponse = {
                     data:{
                         email: "admin@gmail.com",
-                        role: ['admin'],
+                        role: [''],
                         providerTypeId: "",
                         id: 1
                     }

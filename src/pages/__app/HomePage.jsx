@@ -12,9 +12,9 @@ export default function HomePage() {
 
   return (
     <>    
-      <header className="w-full h-[calc(10dvh)] fixed z-10 flex items-center px-4 bg-accent-emerald border-b border-txt-600">
+      <header className="w-full h-[calc(10dvh)] fixed z-10 flex items-center justify-between px-4 bg-accent-emerald border-b border-txt-600">
         <h3 className="text-3xl text-accent-teal font-pacifico capitalize">welcome admin</h3>
-        <button onClick={async()=> await logout()}>logout</button>
+        <button onClick={async()=> await logout()} className="w-fit bg-secondary py-2 px-4 rounded-btn shadow-lg capitalize">logout</button>
       </header>
       <div className="w-full absolute top-[calc(10vh)] p-4">
         <HomeRider />

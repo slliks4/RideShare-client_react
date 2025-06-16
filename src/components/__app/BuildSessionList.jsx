@@ -22,7 +22,6 @@ export default function BuildSessionList({ searchTerm }) {
         console.log('navigate to booking page');
         navigate(`/book-ride/TTKKA-90934AA`, { state: { fromBuildSession: true } });
     };
-    console.log('build session')
     
     return (
         <ul className="my-4">
