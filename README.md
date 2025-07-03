@@ -41,3 +41,17 @@ Key Features
 Project Goals
 
 The primary objective of this application is to provide a reliable and efficient ride-sharing solution tailored to the needs of church communities. By focusing on scheduled events, the application ensures that transportation is available when needed, fostering better attendance and community engagement.
+
+
+
+
+
+
+
+
+
+# App Logic
+Decided to go with a single App.jsx to handle all the app logic like appState, providers, routing, permissions etc.
+## Reason
+1. It makes the code base much easier to navigate
+2. The lines of code is still below 300 and for me I rather much focus on one page than having complex navigation within code base for 6 lines of Code

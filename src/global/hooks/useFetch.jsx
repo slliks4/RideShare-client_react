@@ -1,13 +1,13 @@
 // Providers Import
-import { useAuthContext } from "../../providers/AuthProvider";
+
+import { useAuthContext } from "../../auth/AuthProvider";
 
 // Default Function
 export default function useFetch() {
-    const baseUrl = 'https://rccgmzapp.jentriqmedia.com/api'; // Base URL
-    const { state:{token:globalToken} } = useAuthContext(); // Global auth context
+    const baseUrl = 'http://127.0.0.1:8000'; // Base URL
 
-    // By default it uses gloablToken as Bearer if token is not specified when calling function
-    const request = async ({method, endpoints, data = null, token=globalToken}) => {
+    // By default it assumes token is null except given
+    const request = async ({ method, endpoints, data = null, token=null}) => {
         const options = {
             method,
             headers: {
@@ -21,14 +21,13 @@ export default function useFetch() {
         }
 
         const response = await fetch(`${baseUrl}/${endpoints}`, options);
+        const json= await response.json();
 
         if (!response.ok) {
-            const errorData = await response.json();
-            console.error(`status: ${errorData.status}, message: ${errorData.statusMessage}`);
-            throw new Error(errorData.message || 'Something went wrong');
+            throw Error(json.message || 'Something went wrong');
         }
 
-        return response.json();
+        return json;
     };
 
     const post = ({ endpoints, data, token }) => request({method:'POST', endpoints, data, token});
