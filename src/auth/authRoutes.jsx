@@ -1,11 +1,11 @@
-// Route guard Import
-import { ProtectAuthRoute } from "../global/RouteGuard";
-
-// Component & Layout Import 
 // TODO: Convert to lazy before production
-import AuthLayout from "./AuthLayout";
-import SignUpPage from "./features/SignUp";
+// Route guard Import
 
+import { ProtectAuthRoute } from "../global/RouteGuard";
+import AuthLayout from "./AuthLayout";
+import SignUpPage from "./features/signup/SignUpPage";
+
+// Features Import
 // Auth Routes
 export const authRoutes= [
     {
@@ -17,8 +17,8 @@ export const authRoutes= [
             </ProtectAuthRoute>
         ),
         children: [
-            { index:true, element: <h1>Loging page</h1> },
-            { path:'signup', element: <SignUpPage /> },
+            // { index:true, element: <h1>Loging page</h1> },
+            { index:true , element: <SignUpPage /> },
         ]
     }
 ]

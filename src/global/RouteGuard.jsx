@@ -1,6 +1,6 @@
 // src/components/RouteGuard.jsx
 import { Navigate } from "react-router-dom";
-import { useAuthContext } from "../auth/AuthProvider";
+import { useAuth } from "../auth/Auth";
 
 /**
  * RouteGuard
@@ -21,11 +21,8 @@ export default function RouteGuard({
     redirect = "/not-authorized",
     children
 }) {
-    const { state } = useAuthContext();
-    const roles = state.roles ?? [];
-    const permissions = state.permissions ?? [];
-    const isAuthenticated = state.isAuthenticated;
-
+    const { roles, permissions, isAuthenticated } = useAuth();
+    
     // Determine if user has allowed role
     const hasRoleAccess = allowedRoles.length === 0 || allowedRoles.some(role => roles.includes(role));
 
@@ -56,9 +53,9 @@ export default function RouteGuard({
 
 // Guard Auth Route From Authenticated users
 export const ProtectAuthRoute = ({children}) => {
-    const { state:authState } = useAuthContext();
+    const { isAuthenticated } = useAuth();
 
-    if(authState.isAuthenticated){
+    if(isAuthenticated){
         return <Navigate to={'/' } replace />
     }
 

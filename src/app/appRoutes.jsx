@@ -10,12 +10,11 @@ export const appRoutes = [
         path:'',
         element: <AppLayout />,
         children: [
-            { index:true, element:<h1>Home Page: INDEX TRUE</h1> },
+            // { index:true, element:<h1>Home Page: INDEX TRUE</h1> },
             {
-                path:'test',
+                index:true,
                 element:(
                     <RouteGuard 
-                        allowedRoles={["admin"]}
                         children={<h1>Testing Page</h1>}
                     />
                 ) 

@@ -1,7 +1,12 @@
+// React && React Router Dom Import
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+
+// Hooks && Provider Import
+import { useAuth } from "../auth/Auth";
+
+// Routes Import
 import { authRoutes } from "../auth/authRoutes";
 import { appRoutes } from "../app/appRoutes";
-import { useAuthContext } from "../auth/AuthProvider";
 
 // Routes
 const routes = createBrowserRouter([
@@ -19,10 +24,10 @@ const routes = createBrowserRouter([
 
 export default function Route(){
     // Get auth state 
-    const { state } = useAuthContext();
+    const { isLoading } = useAuth();
     
     // Stalls to get the proper Auth state before rendering routes
-    if (state.isAuthenticated === undefined){
+    if ( isLoading ){
         return <h1> Loading ...</h1>
     }
 
